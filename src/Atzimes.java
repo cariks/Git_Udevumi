@@ -25,8 +25,22 @@ public class Atzimes {
 		int[][] kriterijuVertejumi = new int[studsk][kritsk];
 		double[] semestraVertejumi = new double [studsk];
 		for(int i=0; i<studsk; i++){
-			System.out.println("Ievadi "+(i+1)+". studentu");
+			System.out.println("Ievadi "+(i+1)+". studentu: ");
 			studenti[i] = scan.next();
+		}
+		
+		int maxSvars = 100;
+		for(int i=0; i<kriteriji.length; i++){
+			System.out.println("Definç "+(i+1)+". kritçriju: ");
+			kriteriji[i] = scan.next();
+			
+			do{
+				System.out.println("Ievadi "+kriteriji[i]+" svaru (1-100%):");
+				kriterijaSvars[i] = scan.nextInt();
+			}while(kriterijaSvars[0]>maxSvars ||
+					kriterijaSvars[i]<1 || 
+					(kriterijaSvars[0]==100  && kritsk>1));
+			maxSvars -= kriterijaSvars[i];
 		}
 		
 	}
