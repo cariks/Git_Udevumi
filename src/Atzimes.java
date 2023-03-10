@@ -43,5 +43,19 @@ public class Atzimes {
 			maxSvars -= kriterijaSvars[i];
 		}
 		
+		for(int i=0; i<kriterijuVertejumi.length; i++){
+			for(int j=0; j<kriterijuVertejumi[i].length; j++){
+				do{
+					System.out.println("Ievadi "+studenti[i]+
+					" vçrtçjumu par kritçriju "+kriteriji[j]);
+					kriterijuVertejumi[i][j] = scan.nextInt();
+					
+				}while(kriterijuVertejumi[i][j]<0 ||
+						kriterijuVertejumi[i][j]>10);
+			}
+		}
+		
+		///////
+		
 	}
 }
