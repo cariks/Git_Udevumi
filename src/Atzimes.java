@@ -49,13 +49,31 @@ public class Atzimes {
 					System.out.println("Ievadi "+studenti[i]+
 					" vçrtçjumu par kritçriju "+kriteriji[j]);
 					kriterijuVertejumi[i][j] = scan.nextInt();
-					
 				}while(kriterijuVertejumi[i][j]<0 ||
 						kriterijuVertejumi[i][j]>10);
 			}
 		}
 		
-		///////
-		
+		//Gala rezultâtu aprçíins
+		double rezultats; 
+		for(int i=0; i<studenti.length; i++){
+			rezultats = 0;
+			for(int j=0; j<kriteriji.length; j++){
+				rezultats += ((double) kriterijaSvars[j]/100 * kriterijuVertejumi[i][j]);
+			}
+			semestraVertejumi[i] = rezultats;
+		}
+		//Gala vçrtçjumu izvade
+		for(int i=0; i<studenti.length; i++){
+			for(int j=0; j<kriteriji.length; j++){
+				System.out.println("Studenta "+studenti[i]+
+						" vçrtçjums par kritçriju "+kriteriji[j]+
+						" ir "+kriterijuVertejumi[i][j]+", kura svars ir "+
+						kriterijaSvars[j]);
+			}
+			System.out.println("Semestra vçrtçjums ir "
+					+df.format(semestraVertejumi[i])+"\n");
+		}
+		scan.close();
 	}
 }
