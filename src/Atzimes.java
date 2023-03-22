@@ -9,6 +9,7 @@ public class Atzimes {
 		DecimalFormat df = new DecimalFormat("0.#");
 		
 		do{
+			System.out.println("Sveiki");
 			System.out.println("Cik studentiem aprçíinât vçrtçjumu?");
 			studsk = scan.nextInt();
 			
